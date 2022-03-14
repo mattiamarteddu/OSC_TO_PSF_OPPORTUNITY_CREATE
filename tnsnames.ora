@@ -1,0 +1,16 @@
+Ferrari=
+  (DESCRIPTION =
+    (SDU = 32768)
+    (ADDRESS_LIST =
+        (ADDRESS =
+          (PROTOCOL = TCP)
+          (HOST = 130.61.213.114)
+          (PORT = 1529)
+          (SERVICE_NAME = ccp.s2.vcnprodccp.oraclevcn.com)
+       )
+    (CONNECT_DATA =
+       (SID = A01)
+       (GLOBAL_NAME = A01.WORLD)
+    )
+  )
+

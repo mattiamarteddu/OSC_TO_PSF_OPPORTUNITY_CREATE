@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:act="http://xmlns.oracle.com/apps/crmCommon/activities/activitiesService/" xmlns:not="http://xmlns.oracle.com/apps/crmCommon/notes/noteService" xmlns:not1="http://xmlns.oracle.com/apps/crmCommon/notes/flex/noteDff/" xmlns:opp="http://xmlns.oracle.com/apps/sales/opptyMgmt/opportunities/opportunityService/" xmlns:rev="http://xmlns.oracle.com/apps/sales/opptyMgmt/revenues/revenueService/" xmlns:rev1="http://xmlns.oracle.com/oracle/apps/sales/opptyMgmt/revenues/revenueService/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/cloud/adapter/osc/trigger_REQUEST/types" xmlns:typ1="http://xmlns.oracle.com/apps/sales/opptyMgmt/opportunities/opportunityService/types/">
+   <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsu:Timestamp wsu:Id="TS-47F1D4DE38D372B8B616467375655591">
+           <wsu:Created>${=context.testCase.getPropertyValue( "TIMESTAMP_START" )}</wsu:Created>
+            <wsu:Expires>${=context.testCase.getPropertyValue( "TIMESTAMP_END" )}</wsu:Expires>
+         </wsu:Timestamp>
+         <wsse:UsernameToken wsu:Id="UsernameToken-3D95FD8B9E7BFF162F16467365224622">
+            <wsse:Username>OSC_OIC_APPID_BASICAUTH</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ed6fcd35-6d38-401b-8780-974176a9f326</wsse:Password>
+            <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">BoLIJIMlpJVHvBagQSFsJg==</wsse:Nonce>
+            <wsu:Created>2022-03-08T10:48:42.462Z</wsu:Created>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <typ:onEvent>
+         <typ1:getOpportunityResponse>
+            <typ1:result>
+              
+               <opp:Status_c>?</opp:Status_c>
+            </typ1:result>
+         </typ1:getOpportunityResponse>
+      </typ:onEvent>
+   </soapenv:Body>
+</soapenv:Envelope>
+None
