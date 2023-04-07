@@ -23,6 +23,7 @@ jobs:
       - run: wget -P /opt/oracle https://download.oracle.com/otn_software/linux/instantclient/219000/$INSTANTCLIENT.zip
       - run: sudo unzip /opt/oracle/$INSTANTCLIENT.zip -d /opt/oracle/
       - run: sudo apt-get install libaio1
+      - run: export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_9
       - run: echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_9:$LD_LIBRARY_PATH" >> .bashrc 
       - run: . .bashrc
       - run: cat .bashrc
