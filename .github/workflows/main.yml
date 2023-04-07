@@ -5,7 +5,7 @@ on: [push]
 
 jobs:
   Test-Script-Python:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - run: apt-get install python3
 
