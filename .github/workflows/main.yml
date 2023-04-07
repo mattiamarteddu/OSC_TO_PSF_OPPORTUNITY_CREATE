@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt-get install python3
+      - run: cd ..
       - run: pwd
       - run: ls -la 
       - run: echo "Printing Data.txt"
