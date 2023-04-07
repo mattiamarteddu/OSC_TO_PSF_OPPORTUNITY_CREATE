@@ -15,6 +15,13 @@ jobs:
     steps:
       - run: sudo apt-get install python3 
       - run: sudo python -m pip install cx_Oracle --upgrade
+      - run: sudo mkdir -p /opt/oracle  
+      - run: cd /opt/oracle 
+      - run: sudo unzip /opt/oracle/instantclient-basic-linux.x64-19.8.0.0.0dbru.zip
+      - run: sudo apt-get install libaio1
+      - run: echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_8:$LD_LIBRARY_PATH" >> .bashrc 
+      - run: . .bashrc
+
       - name: Accesso al repo
         uses: actions/checkout@v3
       - name: List Files
