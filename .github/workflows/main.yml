@@ -10,8 +10,10 @@ jobs:
       - run: sudo apt-get install python3 
       - name: Accesso al repo
         uses: actions/checkout@v3
+      - name: List Files
+        run : ls ${{github.workspace}}
       - run: echo "Printing Data.txt"
-      - run: cat ${{github.repository}}/Data.txt 
-      - run: python3 ${{github.repository}}/main.py
+      - run: cat ${{github.workspace}}/Data.txt 
+      - run: python3 ${{github.workspace}}/main.py
 
     
