@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt-get install python3 
+      - run: sudo python -m pip install cx_Oracle --upgrade
       - name: Accesso al repo
         uses: actions/checkout@v3
       - name: List Files
