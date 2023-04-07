@@ -7,13 +7,9 @@ jobs:
   Test-Script-Python:
     runs-on: ubuntu-latest
     steps:
-      - run: sudo apt-get install python3
-      - run: cd ..
-      - run: pwd
-      - run: ls -la 
+      - run: sudo apt-get install python3 
       - run: echo "Printing Data.txt"
-      - run: cat Data.txt 
-
-      - run: python3 main.py
+      - run: cat ${{github.repository}}/Data.txt 
+      - run: python3 ${{github.repository}}/main.py
 
     
