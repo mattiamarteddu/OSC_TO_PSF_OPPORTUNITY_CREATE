@@ -25,6 +25,7 @@ jobs:
       - run: sudo apt-get install libaio1
       - run: echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_9:$LD_LIBRARY_PATH" >> .bashrc 
       - run: . .bashrc
+      - run: cat .bashrc
       - name: List Files
         run : ls ${{github.workspace}}
       - run : ls /opt/oracle
