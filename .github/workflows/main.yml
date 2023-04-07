@@ -27,6 +27,7 @@ jobs:
       - run: echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_9:$LD_LIBRARY_PATH" >> .bashrc 
       - run: . .bashrc
       - run: cat .bashrc
+      - run: echo $LD_LIBRARY_PATH
       - name: List Files
         run : ls ${{github.workspace}}
       - run : ls /opt/oracle
