@@ -7,7 +7,7 @@ jobs:
   Test-Script-Python:
     runs-on: ubuntu-latest
     steps:
-      - run: apt-get install python3
+      - run: sudo apt-get install python3
 
       - run: echo "Printing Data.txt"
       - run: cat Data.txt 
