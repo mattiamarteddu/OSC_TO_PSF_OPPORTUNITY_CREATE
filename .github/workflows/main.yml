@@ -27,6 +27,7 @@ jobs:
       - run: . .bashrc
       - name: List Files
         run : ls ${{github.workspace}}
+      - run : ls /opt/oracle
       - run: echo "Printing Data.txt"
       - run: cat ${{github.workspace}}/Data.txt 
       - run: |
