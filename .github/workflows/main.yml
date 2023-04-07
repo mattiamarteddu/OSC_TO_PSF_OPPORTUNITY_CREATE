@@ -18,9 +18,7 @@ jobs:
       - run: sudo apt-get install python3 
       - run: sudo python -m pip install cx_Oracle --upgrade
       - run: sudo mkdir -p /opt/oracle  
-      - run: cd /opt/oracle 
-      - run: pwd 
-      - run: wget https://download.oracle.com/otn_software/linux/instantclient/219000/$INSTANTCLIENT.zip
+      - run: wget -P /opt/oracle https://download.oracle.com/otn_software/linux/instantclient/219000/$INSTANTCLIENT.zip
       - run: sudo unzip /opt/oracle/$INSTANTCLIENT.zip
       - run: sudo apt-get install libaio1
       - run: echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_9:$LD_LIBRARY_PATH" >> .bashrc 
