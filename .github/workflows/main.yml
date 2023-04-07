@@ -1,7 +1,13 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: First Automation
 
-on: [push]
+on: 
+  workflow_dispatch:
+    inputs:
+      myInput:
+        description: 'User Input Here'
+        required: true
+  
 
 jobs:
   Test-Script-Python:
@@ -15,6 +21,11 @@ jobs:
         run : ls ${{github.workspace}}
       - run: echo "Printing Data.txt"
       - run: cat ${{github.workspace}}/Data.txt 
-      - run: python3 ${{github.workspace}}/main.py
+      - run: |
+          echo "Store: ${{ github.event.inputs.myInput }}"
+          INPUT_MYINPUT=${{ github.event.inputs.myInput }} python3 main.py
+
+
+        
 
     
