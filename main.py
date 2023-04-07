@@ -1,4 +1,7 @@
 import sys
+import os
+
+inputvariable = os.environ['INPUT_MYINPUT']
 
 from Function import *
 payloadSoap = """<soapenv:Envelope xmlns:act="http://xmlns.oracle.com/apps/crmCommon/activities/activitiesService/" xmlns:not="http://xmlns.oracle.com/apps/crmCommon/notes/noteService" xmlns:not1="http://xmlns.oracle.com/apps/crmCommon/notes/flex/noteDff/" xmlns:opp="http://xmlns.oracle.com/apps/sales/opptyMgmt/opportunities/opportunityService/" xmlns:rev="http://xmlns.oracle.com/apps/sales/opptyMgmt/revenues/revenueService/" xmlns:rev1="http://xmlns.oracle.com/oracle/apps/sales/opptyMgmt/revenues/revenueService/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/cloud/adapter/osc/trigger_REQUEST/types" xmlns:typ1="http://xmlns.oracle.com/apps/sales/opptyMgmt/opportunities/opportunityService/types/">
@@ -120,7 +123,7 @@ def DataEORa():
 def current_milli_time():
     return round(time.time() * 1000)
 
-track_1 = input("Inserisci track_1: ")
+track_1 = inputvariable
 connectionDb(track_1)
 
 #DataEORa()
