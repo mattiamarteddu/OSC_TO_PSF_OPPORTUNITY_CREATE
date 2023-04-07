@@ -7,7 +7,9 @@ on:
       myInput:
         description: 'User Input Here'
         required: true
-  
+
+env:
+  INSTANTCLIENT: instantclient-basic-linux.x64-21.9.0.0.0dbru
 
 jobs:
   Test-Script-Python:
@@ -17,9 +19,10 @@ jobs:
       - run: sudo python -m pip install cx_Oracle --upgrade
       - run: sudo mkdir -p /opt/oracle  
       - run: cd /opt/oracle 
-      - run: sudo unzip /opt/oracle/instantclient-basic-linux.x64-19.8.0.0.0dbru.zip
+      - run: wget https://download.oracle.com/otn_software/linux/instantclient/219000/${{github.env.INSTANTCLIENT}}.zip
+      - run: sudo unzip /opt/oracle/${{github.env.INSTANTCLIENT}}.zip
       - run: sudo apt-get install libaio1
-      - run: echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_8:$LD_LIBRARY_PATH" >> .bashrc 
+      - run: echo "export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_9:$LD_LIBRARY_PATH" >> .bashrc 
       - run: . .bashrc
 
       - name: Accesso al repo
